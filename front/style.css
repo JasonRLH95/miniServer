@@ -32,6 +32,9 @@ body {
       align-items: center;
       justify-content: space-between;
     }
+    .plan.selected{
+      border: 2px solid blue;
+    }
     .plan h2 {
       margin: 0;
     }
