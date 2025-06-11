@@ -1,0 +1,62 @@
+body {
+      font-family: Arial, sans-serif;
+      background: silver;
+      padding: 20px;
+    }
+    body h1{
+      text-align: center;
+      font-size: 40px;
+    }
+    .logo{
+      margin: auto;
+      width: 300px;
+      height: 75px;
+      background: url("./assets/betayeda_logo.png");
+    }
+    .plans-container {
+      display: flex;
+      justify-content: space-evenly;
+      width: 1100px;
+      margin: 80px auto 0;
+    }
+    .plan {
+      background: white;
+      border-radius: 25px;
+      padding: 40px 20px;
+      width: 250px;
+      height: 350px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .plan h2 {
+      margin: 0;
+    }
+    .price {
+      font-size: 28px;
+    }
+    .billing-options {
+      margin: 10px 0 0;
+    }
+    .billing-options label {
+      margin-right: 10px;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+    
+      background: white;
+      color: #007BFF;
+      border: 0.2px solid #007BFF;
+    }
