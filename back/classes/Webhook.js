@@ -3,7 +3,7 @@
 class Webhook{
     hook;
     constructor(data){
-        hook = data;
+        this.hook = data;
     }
     getHook(){
         return this.hook;
