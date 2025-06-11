@@ -11,8 +11,8 @@ router.post('/paypro-webhook', (req, res) => {
   // const webhookData = req.body;  // Data sent by PayPro Global
   // console.log('Received webhook data:', webhookData);
   lastWebhook = new Webhook({
-    headers: req.headers,
-    body: req.body,
+    headers: JSON.stringify(req.headers),
+    body: JSON.stringify(req.body),
   });
   // lastWebhook = {
   //   headers : req.headers,
@@ -31,8 +31,8 @@ router.post('/paypro-webhook', (req, res) => {
   // res.status(200).send('Webhook received');
 });
 router.get('/last-webhook', (req, res) => {
-  console.log(lastWebhook);
-  res.json(lastWebhook || { message: 'No webhook received yet' });
+  console.log(lastWebhook.getHook());
+  res.json(lastWebhook.getHook() || { message: 'No webhook received yet' });
 });
 
 router.get('/all-webhooks', (req, res) => {
