@@ -1,10 +1,10 @@
 const express = require("express");
-const app = express();
+const router = express.router();
 
 
 var lastWebhook = null;
 
-app.post('/paypro-webhook', (req, res) => {
+router.post('/paypro-webhook', (req, res) => {
   // const webhookData = req.body;  // Data sent by PayPro Global
   // console.log('Received webhook data:', webhookData);
   lastWebhook = {
@@ -20,6 +20,8 @@ app.post('/paypro-webhook', (req, res) => {
   // Respond with status 200 to acknowledge receipt
   res.status(200).send('Webhook received');
 });
-app.get('/last-webhook', (req, res) => {
+router.get('/last-webhook', (req, res) => {
   res.json(lastWebhook || { message: 'No webhook received yet' });
 });
+
+module.exports = router;
