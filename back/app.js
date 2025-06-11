@@ -9,7 +9,7 @@ app.use(bp.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve("../front")));
-app.use("/", appRoute);
+app.use("/hook", appRoute);
 // app.get("/",(req,res)=>{
 //     res.send("ok");
 //     // res.sendFile(path.resolve("../front"))
