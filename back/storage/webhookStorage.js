@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const filePath = path.resolve(__dirname, 'webhooks.json');
+const filePath = path.resolve("../json/webhooks.json");
 
 function loadHooks() {
   try {
