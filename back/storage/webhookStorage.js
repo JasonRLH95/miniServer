@@ -1,11 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 
-const filePath = path.resolve("../json/webhooks.json");
+const filePath = path.resolve(__dirname, "../json/webhooks.json");
 
 function loadHooks() {
   try {
+    if (!fs.existsSync(filePath)) {
+        fs.mkdirSync(path.dirname(filePath), { recursive: true });
+        fs.writeFileSync(filePath, '[]', 'utf-8');
+    }
     const data = fs.readFileSync(filePath, 'utf-8');
+    console.log("attempt to load: ", filePath);
     return JSON.parse(data);
   } catch (err) {
     console.error("Could not load hooks, returning empty array.");
