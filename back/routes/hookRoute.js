@@ -10,7 +10,7 @@ router.post('/paypro-webhook', (req, res) => {
   lastWebhook = {
     headers : req.headers,
     body: req.body,
-    date_recieved: new Date().toISOString();
+    date_recieved: new Date().toISOString(),
   }
   hooks.push(lastWebhook);
   saveHooks(hooks);
