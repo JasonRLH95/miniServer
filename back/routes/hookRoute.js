@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { loadHooks, saveHooks } = require('./webhookStorage');
+const { loadHooks, saveHooks } = require('../storage/webhookStorage');
 let hooks = loadHooks(); // Load existing webhooks on server start
 
 var lastWebhook = null;
