@@ -1,15 +1,20 @@
 const express = require("express");
 const router = express.Router();
+const { loadHooks, saveHooks } = require('./webhookStorage');
+let hooks = loadHooks(); // Load existing webhooks on server start
 
 var lastWebhook = null;
-var hooks = [];
+// var hooks = [];
 
 router.post('/paypro-webhook', (req, res) => {
   lastWebhook = {
     headers : req.headers,
     body: req.body,
+    date_recieved: new Date().toISOString();
   }
   hooks.push(lastWebhook);
+  saveHooks(hooks);
+  localStorage.setItem("webhooks",[localStorage.getItem("webhooks")])
   // --------------------------------------------------------------------------
   // Handle the webhook data here (e.g., verify payment, update subscription).
   // --------------------------------------------------------------------------
