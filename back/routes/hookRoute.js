@@ -14,7 +14,6 @@ router.post('/paypro-webhook', (req, res) => {
   }
   hooks.push(lastWebhook);
   saveHooks(hooks);
-  localStorage.setItem("webhooks",[localStorage.getItem("webhooks")])
   // --------------------------------------------------------------------------
   // Handle the webhook data here (e.g., verify payment, update subscription).
   // --------------------------------------------------------------------------
